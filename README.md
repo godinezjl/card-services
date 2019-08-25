@@ -56,8 +56,30 @@ source venv/bin/activate
 ```
 Note that the promt will now change to inclue (venv) at the begining. This is an indication that you are running in the virtual environment.
 
+#### Install Django
+Now lets install the django framework in the virtual environment. Stay in that folder and execute the following command.
+```
+ sudo pip install Django==2.0.3
+```
 
+#### Install Django Framework
+Now lets install the django framework by executing the following command.
+```
+sudo pip install djangorestframework
+```
 
+#### Create your Django Project
+Once the framework is installed, it is time to create a new django project by executing the following command. Note that the project can be called whatever you want. For this project, I called it API. Also note the dot at the end of the command. That tells the django admin to installed it in the current location.
+```
+django-admin.py startproject api .
+'''
+This should create a new folder called api. That's where the project data will be hosted. Now we can verify that django got installed properly by running the following command.
+```
+
+```
+
+#### Create Your Application
+With django installed and running
   
 
 ## Running the tests
