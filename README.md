@@ -152,9 +152,20 @@ X-Frame-Options: SAMEORIGIN
 ```
 
 ## Running the tests
-Tests can be executed by running unittest on the api/ directory, and using the path Test_* to find all tests.
+Tests can be executed by running unittest on the credit_card_service/ directory, and using the path Test_* to find all tests. In Terminal, ensure you are in the credit_card_service directory, and run the following command
+```Bash
+python -m unittest discover -s api -p "test_*.py"
+```
 
+If all tests pass, you should see a similar outout to the one below
+```Bash
+----------------------------------------------------------------------
+Ran 30 tests in 0.003s
 
+OK
+
+```
+If one or more of the tests fail, you should see a trace of the test that failed and the location.
 
 ## Contributing
 
