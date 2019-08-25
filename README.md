@@ -96,8 +96,13 @@ Congratulations, the installation was successful!
 
 #### Supported APIs
 
-POST /api -- validate a credit card.\ Body Parameter Required: { full_credit_card_number": "12387401982743" }
-
+|Method| API Call            | Description                             | Parameters Required           | Status             |
+|------|:------------------- |:--------------------------------------- |:------------------------------|:------------------:|
+|POST  | /api                | validate a credit card                  | full_credit_card_number       |HTTP 200 OK if valid <br/> HTTP 400 Bad Request if not|
+|POST  | /api/visa           | generage a valid Visa card              | None                           |HTTP 200 OK if valid <br/> HTTP 400 Bad Request if not|                                  
+|POST  | /api/mastercard     | generate a valid Mastercard card        | None                           |HTTP 200 OK if valid <br/> HTTP 400 Bad Request if not|
+|POST  | /api/discover       | generate a valid Discover card          | None                           |HTTP 200 OK if valid <br/> HTTP 400 Bad Request if not|
+|POST  | /api/americanexpress| generate a valid American Express card  | None                           |HTTP 200 OK if valid <br/> HTTP 400 Bad Request if not|
 
 To access the APIs, use your favorite Terminal application like curl or Httpie. The below examples are using Httpie.
 
