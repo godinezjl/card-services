@@ -149,7 +149,7 @@ Vary: Accept, Cookie
 X-Frame-Options: SAMEORIGIN
 ```
 
-## Running the tests
+## Running Tests
 Tests can be executed by running unittest on the credit_card_service/ directory, and using the path Test_* to find all tests. In Terminal, ensure you are in the credit_card_service directory, and run the following command
 ```Bash
 python -m unittest discover -s api -p "test_*.py"
@@ -164,13 +164,6 @@ OK
 
 ```
 If one or more of the tests fail, you should see a trace of the test that failed and the location.
-
-## Contributing
-
-  
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-  
 
 ## Authors
 * **Jose Godinez** 
