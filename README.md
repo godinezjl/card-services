@@ -116,7 +116,7 @@ http --form POST http://127.0.0.1:8000/ \full_credit_card_number="41472022209275
 ```
 
 You should see an output similar to the below.
-```Bash
+```javascript
 HTTP/1.1 200 OK
 Allow: POST, GET, OPTIONS
 Content-Length: 182
@@ -140,7 +140,7 @@ X-Frame-Options: SAMEORIGIN
 Note that a valid request will return HTTP 200 OK, to tell the calling program that the card number is valid.
 
 If the card is not valid, you will get a HTTP 400 status like the one below
-``` Bash
+``` javascript
 HTTP/1.1 400 Bad Request
 Allow: POST, GET, OPTIONS
 Content-Length: 2
