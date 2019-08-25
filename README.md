@@ -1,6 +1,6 @@
 # card-services
 
-Card Services provides tools for validating that a credit card or debit card number is valid by using the Luhn Algorithm.
+Card Services provides tools for validating credit card or debit card numbers by using the Luhn Algorithm.
 
 ## Getting Started
 
@@ -11,17 +11,9 @@ Download the code directly from github by cloning this repo.
 Card Services was built with Python 3.7.4 and DJango 2.0.3. Before you can rund this application, please follow the installation instructions for both Python and DJango based on your operating system.
 
 #### Helpful References
-https://appdividend.com/2018/03/28/how-to-install-django-in-mac/
-
-https://docs.python-guide.org/starting/install3/osx/
-
-https://docs.python-guide.org/starting/install/win/#install-windows
-  
-```
-
-Give examples
-
-```
+  * https://appdividend.com/2018/03/28/how-to-install-django-in-mac/
+  * https://docs.python-guide.org/starting/install3/osx/
+  * https://docs.python-guide.org/starting/install/win/#install-windows
 
 ### Installing on Mac
 To get started, lets begin by setting up the python3 environment. By default, MacOS ships with Python2. We should not uninstall it as many programs rely on that version.
@@ -52,8 +44,19 @@ Now, let's install the VirtualEnv to allow us to run multiple version of python3
 sudo pip install virtualenv
 ```
 
+Once installed, we need to create the virtual environment inside the folder where we will keep our application. For me, my folder is under /users/jose/credit_card_service. 
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+cd /users/jose/credit_card_service
+jose$ virtualenv --python=python3 venv
+```
+This should create the vurtual environment folder called venv. Now lets activate the virtual environment by executing the following command:
+```
+source venv/bin/activate
+```
+Note that the promt will now change to inclue (venv) at the begining. This is an indication that you are running in the virtual environment.
+
+
 
   
 
