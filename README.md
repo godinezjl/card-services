@@ -47,7 +47,7 @@ sudo pip install virtualenv
 Once installed, we need to create the virtual environment inside the folder where we will keep our application. For me, my folder is under /users/jose/credit_card_service. 
 
 ```
-cd /users/jose/credit_card_service
+jose$ cd /users/jose/credit_card_service
 jose$ virtualenv --python=python3 venv
 ```
 This should create the vurtual environment folder called venv. Now lets activate the virtual environment by executing the following command:
@@ -59,7 +59,7 @@ Note that the promt will now change to inclue (venv) at the begining. This is an
 #### Install Django
 Now lets install the django framework in the virtual environment. Stay in that folder and execute the following command.
 ```
- sudo pip install Django==2.0.3
+sudo pip install Django==2.0.3
 ```
 
 #### Install Django Framework
@@ -75,12 +75,24 @@ django-admin.py startproject api .
 '''
 This should create a new folder called api. That's where the project data will be hosted. Now we can verify that django got installed properly by running the following command.
 ```
-
+python manage.py runserver
 ```
+if everything is working well, you will see a url that you can go to and will see the home page of your website. Quit running the server, by typing control x, so that we can create the application.
 
 #### Create Your Application
-With django installed and running
-  
+With django installed, run the following command
+```
+django-admin.py startapp credit_card
+```
+
+#### Copy This App to the application Location
+Now that you have created the application, clone the contents of this application to the credit_card folder.
+
+#### Run The Server
+Now it's time to run your server so that you can host the application. Run the following command.
+```
+python manage.py runserver
+```
 
 ## Running the tests
 
