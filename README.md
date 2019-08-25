@@ -82,20 +82,18 @@ python manage.py runserver
 
 if everything is working well, you will see a url that you can go to and will see the home page of your website. Quit running the server, by typing control x, so that we can create the application.
 
-#### Create Your Application
-With django installed, run the following command
-```
-django-admin.py startapp credit_card
-```
+#### Copy This Application to the application Location
+Now that you have created the application, clone the contents of this application to the API folder.
 
-#### Copy This App to the application Location
-Now that you have created the application, clone the contents of this application to the credit_card folder.
-
-#### Run The Server
+#### Run The Django Server
 Now it's time to run your server so that you can host the application. Run the following command.
 ```
 python manage.py runserver
 ```
+You should now see the credit card services web interfact when you go to your url in your browser.
+
+Congratulations, the installation was successful!
+
 #### Supported APIs
 To access the APIs, use your favorite Terminal application like curl or Httpie. The below examples are using Httpie.
 
