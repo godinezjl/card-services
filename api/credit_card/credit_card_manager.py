@@ -1,5 +1,6 @@
 from .models import CreditCard, InvalidCreditCard
 import re
+import random
 
 class CreditCardManager: 
     '''
@@ -105,6 +106,40 @@ class CreditCardManager:
             ]
         )
     
+    def generate_visa(self):
+        generated_number = str(self._visa_mii) + str(random.randrange(10000000000001,99999999999999,1))
+        generated_number = self.__generate_valid_card_number(generated_number)
+
+        return self.parse_credit_card(generated_number)
+        
+    def generate_mastercard(self):
+        generated_number = str(random.randrange(2221,2720,1)) + str(random.randrange(10000000001,99999999999,1))
+        generated_number = self.__generate_valid_card_number(generated_number)
+
+        return self.parse_credit_card(generated_number)
+    
+    def generate_discover(self):
+        generated_number = str(random.randrange(628200, 628899,1)) + str(random.randrange(100000001,999999999999,1))
+        generated_number = self.__generate_valid_card_number(generated_number)
+
+        return self.parse_credit_card(generated_number)
+    
+    def generate_american_express(self):
+        generated_number = '34' + str(random.randrange(100000000001,999999999999,1))
+        generated_number = self.__generate_valid_card_number(generated_number)
+
+        return self.parse_credit_card(generated_number)
+    
+    def __generate_valid_card_number(self, credit_card_number):
+        luhn_result = self.__generate_luhn_checksum(credit_card_number + '0')
+
+        if luhn_result > 0:
+            credit_card_number = credit_card_number + str(10 - luhn_result)
+        else:
+            credit_card_number = credit_card_number + '0'
+
+        return credit_card_number
+
     def __sanitize_credit_card_number(self, credit_card_number):
         credit_card_number = re.sub(r"\s+", "", credit_card_number)
         credit_card_number = re.sub(r"-+", "", credit_card_number)
@@ -222,12 +257,14 @@ class CreditCardManager:
         return 0
 
     def __validate_luhn_checksum(self, full_credit_card_number):
+        return 0 == self.__generate_luhn_checksum(full_credit_card_number)
 
+    def __generate_luhn_checksum(self, full_credit_card_number):
         # ensure string is properly formated
         full_credit_card_number = self.__sanitize_credit_card_number(full_credit_card_number)
 
         if not full_credit_card_number.isdigit():
-            return False
+            return -1
 
         number_to_process = int(full_credit_card_number)
         sum=0
@@ -247,4 +284,4 @@ class CreditCardManager:
 
             # remove the right most two digits from the credit card number
             number_to_process //= 100
-        return 0 == sum % 10
+        return sum % 10

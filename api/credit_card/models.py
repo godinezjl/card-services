@@ -1,5 +1,4 @@
 from django.db import models
-
 '''
 class CreditCard(models.Model):
     full_credit_card_number = models.CharField(max_length=19, null=True)

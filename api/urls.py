@@ -16,9 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from api.credit_card.views import credit_card_view
+from api.credit_card.views import generate_visa_view
+from api.credit_card.views import generate_mastercard_view
+from api.credit_card.views import generate_discover_view
+from api.credit_card.views import generate_american_express_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', credit_card_view),
-    path('', credit_card_view)
+    path('', credit_card_view),
+    path('api/visa/', generate_visa_view),
+    path('api/mastercard/', generate_mastercard_view),
+    path('api/discover/', generate_discover_view),
+    path('api/americanexpress/', generate_american_express_view)
 ]

@@ -288,3 +288,22 @@ class GeneralCreditCardTests(BaseTest):
 
         self.assertEqual(self.credit_card_service.validate_credit_card(invalid_credit_card), True)
 
+    def test_generate_visa(self):
+        visa_number = self.credit_card_service.generate_visa()
+
+        self.assertTrue(self.credit_card_service.validate_credit_card(visa_number))
+
+    def test_generate_mastercard(self):
+        mastercard_number = self.credit_card_service.generate_mastercard()
+
+        self.assertTrue(self.credit_card_service.validate_credit_card(mastercard_number))
+
+    def test_generate_discover(self):
+        discover_number = self.credit_card_service.generate_discover()
+
+        self.assertTrue(self.credit_card_service.validate_credit_card(discover_number))
+
+    def test_generate_american_express(self):
+        american_express_number = self.credit_card_service.generate_american_express()
+
+        self.assertTrue(self.credit_card_service.validate_credit_card(american_express_number))
