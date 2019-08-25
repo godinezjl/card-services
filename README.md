@@ -99,6 +99,16 @@ python manage.py runserver
 #### Supported APIs
 To access the APIs, use your favorite Terminal application like curl or Httpie. The below examples are using Httpie.
 
+#### Response Parameter
+ * check_digit = The Luhn digit calcualted for this card
+ * full_credit_card_number = The full credit card number 
+ ** Supported formats: xxxx-xxxx-xxxx or xxxx xxxx xxxx or xxxxxxxxxxxx
+ * issuer = The issuing authority
+ ** Supported issuers: American Express, Discover, Master Card, and Visa)
+ * issuer_identification_number = the iin associated with the issuer
+ * major_industry_identifier = The mii associated with the issuer
+ * personal_account_number = The account number assigned to the individual card holder
+ 
 ##### Check If A Credit/Debit Card Number Is Valid
 To check if a given credit or debit card is valid, simply call your local server and set the full_credit_card_number parameter as follows.
 ``` Bash
