@@ -10,9 +10,11 @@ Download my code directly from github.
 
 Card Services was built with Python 3.7.4 and DJango 2.0.3. Before you can rund this application, please follow the installation instructions for both Python and DJango based on your operating system.
 
-#### Helful References
+#### Helpful References
 https://appdividend.com/2018/03/28/how-to-install-django-in-mac/
+
 https://docs.python-guide.org/starting/install3/osx/
+
 https://docs.python-guide.org/starting/install/win/#install-windows
   
 ```
@@ -24,9 +26,7 @@ Give examples
   
 
 ### Installing on Mac
-
-  
-A step by step series of examples that tell you how to get a development env running
+To get started, lets begin by setting up python the python3 environment
 
   
 
