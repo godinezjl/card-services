@@ -4,7 +4,7 @@ Card Services provides tools for validating that a credit card or debit card num
 
 ## Getting Started
 
-Download my code directly from github. 
+Download the code directly from github by cloning this repo.
 
 ### Prerequisites
 
@@ -23,36 +23,35 @@ Give examples
 
 ```
 
-  
-
 ### Installing on Mac
-To get started, lets begin by setting up python the python3 environment
+To get started, lets begin by setting up the python3 environment. By default, MacOS ships with Python2. We should not uninstall it as many programs rely on that version.
 
-  
+#### Open terminal and type the following command
 
-Say what the step will be
+```
+brew install python3
+```
+#### Check for Python 3 Version
+To check the proper version was installed, type the following command and ensure the output is Python 3.x.x, where x stands for some version of the Python 3 release.
 
-  
+```
+python3 --version
+Python 3.7.4
 
 ```
 
-Give the example
-
+#### Install PIP Package Management System
+Now that python is installed, we need to install the PIP package management system. In your terminal type the following command.
+```
+sudo easy_install pip
 ```
 
-  
-
-And repeat
-
-  
-
+#### Install VirtualEnv for Python
+Now, let's install the VirtualEnv to allow us to run multiple version of python3 in our system.
+```
+sudo pip install virtualenv
 ```
 
-until finished
-
-```
-
-  
 
 End with an example of getting some data out of the system or using it for a little demo
 
