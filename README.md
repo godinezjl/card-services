@@ -95,6 +95,10 @@ You should now see the credit card services web interfact when you go to your ur
 Congratulations, the installation was successful!
 
 #### Supported APIs
+
+POST /api -- validate a credit card.\ Body Parameter Required: { full_credit_card_number": "12387401982743" }
+
+
 To access the APIs, use your favorite Terminal application like curl or Httpie. The below examples are using Httpie.
 
 #### Response Parameter
