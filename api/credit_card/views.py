@@ -7,9 +7,6 @@ from .credit_card_manager import CreditCardManager
 
 @api_view(['GET','POST'])
 def credit_card_view(request):
-    '''
-    display the credit card or validate the credit card info
-    '''
     if(request.method == 'GET'):
         serializer = CreditCardSerializer(CreditCard())
         return Response(serializer.data)

@@ -1,17 +1,4 @@
-from django.db import models
-'''
-class CreditCard(models.Model):
-    full_credit_card_number = models.CharField(max_length=19, null=True)
-    major_industry_identifier = models.IntegerField(null=True, blank=True)
-    issuer_identification_number = models.IntegerField(null=True, blank=True)
-    personal_account_number = models.IntegerField(null=True, blank=True)
-    check_digit = models.IntegerField(null=True, blank=True)
-    issuer = models.CharField(max_length=100, null=True, blank=True)
-    
-    def get_full_credit_card_number(self):
-            return int(str(self.issuer_identification_number) + str(self.personal_account_number) + str(self.check_digit))
-#'''
-
+#from django.db import models
 
 class CreditCard():
     def __init__ (self, 

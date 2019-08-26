@@ -39,6 +39,20 @@ class CreditCardManager:
         pass
         
     def parse_credit_card(self, credit_card_number):
+        ''' Parses the credit card number provided
+
+        Parameter
+        ------------
+        credit_card_number: str
+            The complete credit card number to be parsed
+
+        Returns
+        -----------
+        CreditCard
+            The credit card generated from the number provided 
+
+        '''
+
         major_industry_identifier = 0
         account_identification_number = 0
         issuer_identification_number = 0
@@ -97,6 +111,21 @@ class CreditCardManager:
             )
 
     def validate_credit_card(self, credit_card):
+        '''Ensures that the credit card has all of main attributes assigned
+
+        Parameters
+        -----------
+        credit_card: CreditCard
+            The credit card to be validated
+
+        Returns
+        -----------
+        bool
+            True if all major components are assigned and the Luhn check is correct
+            False otherwise
+
+        '''
+
         return all (
             [
                 credit_card.major_industry_identifier != 0,
@@ -107,24 +136,60 @@ class CreditCardManager:
         )
     
     def generate_visa(self):
+        '''Generates a valid Visa card
+
+        Returns
+        -----------
+        CreditCard
+            The visa generated
+
+        '''
+
         generated_number = str(self._visa_mii) + str(random.randrange(10000000000001,99999999999999,1))
         generated_number = self.__generate_valid_card_number(generated_number)
 
         return self.parse_credit_card(generated_number)
         
     def generate_mastercard(self):
+        '''Generates a valid Mastercard card
+
+        Returns
+        -----------
+        CreditCard
+            The Mastercard generated
+
+        '''
+
         generated_number = str(random.randrange(2221,2720,1)) + str(random.randrange(10000000001,99999999999,1))
         generated_number = self.__generate_valid_card_number(generated_number)
 
         return self.parse_credit_card(generated_number)
     
     def generate_discover(self):
+        '''Generates a valid Discover card
+
+        Returns
+        -----------
+        CreditCard
+            The Discover card generated
+
+        '''
+
         generated_number = str(random.randrange(628200, 628899,1)) + str(random.randrange(100000001,999999999999,1))
         generated_number = self.__generate_valid_card_number(generated_number)
 
         return self.parse_credit_card(generated_number)
     
     def generate_american_express(self):
+        '''Generates a valid Americn Express card
+
+        Returns
+        -----------
+        CreditCard
+            The American Express card generated
+
+        '''
+
         generated_number = '34' + str(random.randrange(100000000001,999999999999,1))
         generated_number = self.__generate_valid_card_number(generated_number)
 

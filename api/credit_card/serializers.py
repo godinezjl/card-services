@@ -1,18 +1,6 @@
 from rest_framework import serializers
 from .models import CreditCard
 
-# class CreditCardSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = CreditCard
-#         fields = [
-#                 'full_credit_card_number',
-#                 'major_industry_identifier',
-#                 'issuer_identification_number',
-#                 'personal_account_number',
-#                 'check_digit',
-#                 'issuer'
-#                 ]
-
 class CreditCardSerializer(serializers.Serializer):
     full_credit_card_number = serializers.CharField(allow_blank=True, max_length=19)
     major_industry_identifier = serializers.IntegerField(read_only = True)
@@ -25,6 +13,7 @@ class CreditCardSerializer(serializers.Serializer):
         '''
         Create and return a new CreditCard instance based on the validated data
         '''
+
         return CreditCard(
             validated_data.get('full_credit_card_number'),
             validated_data.get('major_industry_identifier'),
@@ -38,6 +27,7 @@ class CreditCardSerializer(serializers.Serializer):
         '''
         Update and return an updated credit card instance given the validated data
         '''
+        
         instance.full_credit_card_number = validated_data.get('full_credit_card_number', instance.full_credit_card_number),
         instance.major_industry_identifier = validated_data.get('major_industry_identifier', instance.major_industry_identifier),
         instance.issuer_identification_number = validated_data.get('issuer_identification_number', instance.issuer_identification_number),
